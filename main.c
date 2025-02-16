@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    // Creiamo una matrice 3x3 per il gioco del tris
+
     int board[3][3];
 
-    // Chiediamo all'utente di inserire i valori per ogni casella
+    
     printf("Inserisci la matrice 3x3 per il gioco del tris.\n");
     printf("Usa 0 per una casella vuota, 1 per X e 2 per O.\n");
 
-    // Cicli per raccogliere i dati da parte dell'utente
+    
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             printf("Inserisci valore per la posizione (%d, %d): ", i+1, j+1);
@@ -16,7 +16,7 @@ int main() {
         }
     }
 
-    // Mostriamo il tabellone per il controllo
+   
     printf("\nTabellone finale:\n");
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -25,7 +25,7 @@ int main() {
         printf("\n");
     }
 
-    // Controlliamo le righe per determinare se c'è un vincitore
+    
     for (int i = 0; i < 3; i++) {
         if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != 0) {
             if (board[i][0] == 1) {
@@ -38,7 +38,7 @@ int main() {
         }
     }
 
-    // Controlliamo le colonne
+    
     for (int i = 0; i < 3; i++) {
         if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != 0) {
             if (board[0][i] == 1) {
@@ -62,7 +62,7 @@ int main() {
         }
     }
 
-    // Controlliamo la diagonale secondaria (da top-right a bottom-left)
+   
     if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != 0) {
         if (board[0][2] == 1) {
             printf("Vincitore: X (Diagonale secondaria)\n");
